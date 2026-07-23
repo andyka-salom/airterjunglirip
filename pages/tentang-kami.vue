@@ -181,7 +181,7 @@ const values = [
 .values-section h2 { font-size: clamp(1.7rem, 2.8vw, 2.3rem); margin-top: 12px; margin-bottom: 40px; }
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
 }
 .value-card {
@@ -223,7 +223,6 @@ const values = [
 
 @media (max-width: 900px) {
   .story-grid { grid-template-columns: 1fr; }
-  .values-grid { grid-template-columns: 1fr; }
   .timeline::before { left: 54px; }
   .timeline-item { grid-template-columns: 54px 1fr; gap: 20px; }
   .timeline-year::after { right: -27px; }

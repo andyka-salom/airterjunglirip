@@ -192,7 +192,7 @@ const gallery = useGallery().slice(0, 6)
 /* DESTINATIONS */
 .dest-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
 }
 .dest-media { position: relative; aspect-ratio: 4/3.1; margin-bottom: 20px; }
@@ -216,7 +216,7 @@ const gallery = useGallery().slice(0, 6)
 
 .umkm-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
 }
 .umkm-card {
@@ -234,7 +234,7 @@ const gallery = useGallery().slice(0, 6)
 }
 .umkm-card img {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 200px;
   object-fit: cover;
 }
 .umkm-card-body {
@@ -300,13 +300,10 @@ const gallery = useGallery().slice(0, 6)
 @media (max-width: 960px) {
   .intro-grid, .umkm-grid { grid-template-columns: 1fr; }
   .intro-media { order: -1; }
-  .dest-grid { grid-template-columns: 1fr; }
-  .umkm-cards { grid-template-columns: repeat(3, 1fr); }
   .gal-grid { grid-template-columns: repeat(3, 1fr); }
   .gal-item { grid-column: span 1; }
 }
 @media (max-width: 620px) {
-  .umkm-cards { grid-template-columns: 1fr 1fr; }
   .gal-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>

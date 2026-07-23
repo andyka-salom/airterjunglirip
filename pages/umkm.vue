@@ -104,8 +104,8 @@ const filtered = computed(() =>
 
 .umkm-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
 }
 .umkm-card {
   background: #fff;
@@ -116,7 +116,7 @@ const filtered = computed(() =>
   flex-direction: column;
 }
 .umkm-media { position: relative; }
-.umkm-media img { width: 100%; aspect-ratio: 4/3.4; object-fit: cover; }
+.umkm-media img { width: 100%; height: 200px; object-fit: cover; }
 .umkm-media .tag-pill { position: absolute; left: 14px; top: 14px; background: rgba(255,255,255,0.94); }
 .umkm-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .umkm-body h3 { font-size: 1.08rem; }
@@ -145,9 +145,6 @@ const filtered = computed(() =>
 .umkm-cta-inner .lead { margin-top: 14px; color: #5b4152; max-width: 44ch; }
 
 @media (max-width: 960px) {
-  .umkm-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 620px) {
-  .umkm-grid { grid-template-columns: 1fr; }
+  /* You can add custom media queries for 960px here if needed in the future */
 }
 </style>
