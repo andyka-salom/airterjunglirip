@@ -1,0 +1,154 @@
+/* ============================================================
+   DESAIN TOKEN — Desa Wisata Kembang Sari
+   Palet: terinspirasi kebun bunga celosia & amaranthus merona
+   ============================================================ */
+:root {
+  --blossom: #EAADBE;       /* pink lembut */
+  --blossom-deep: #C98A9C;  /* rose muted */
+  --rose-soft: #FBECF0;     /* pink pucat */
+  --cream: #ffffff;         /* putih bersih */
+  --leaf: #7FA79B;          /* hijau kabut */
+  --plum: #3d3438;          /* abu-abu arang hangat / charcoal */
+
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --container: 1180px;
+  --radius-petal: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  --shadow-soft: 0 20px 45px -20px rgba(201, 138, 156, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--plum);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p { line-height: 1.7; margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blossom-deep);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: var(--blossom-deep);
+  border-radius: 2px;
+}
+
+.section {
+  padding: 96px 0;
+  position: relative;
+}
+
+.section--tint {
+  background: linear-gradient(180deg, var(--rose-soft) 0%, #fff 100%);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--blossom-deep);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background: var(--blossom-deep);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -18px rgba(201, 138, 156, 0.5); }
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+}
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.28); transform: translateY(-3px); }
+
+.btn--dark {
+  background: var(--plum);
+  color: #fff;
+}
+.btn--dark:hover { transform: translateY(-3px); background: var(--blossom-deep); }
+
+/* Petal-clip signature shape — used on hero video frame, cards, gallery */
+.petal-frame {
+  border-radius: var(--radius-petal);
+  overflow: hidden;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--rose-soft);
+  color: var(--blossom-deep);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .section { padding: 64px 0; }
+}
